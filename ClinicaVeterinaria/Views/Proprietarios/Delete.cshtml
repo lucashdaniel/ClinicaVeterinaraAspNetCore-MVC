@@ -1,0 +1,51 @@
+﻿@model ClinicaVeterinaria.Models.Proprietario
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<h3> Deseja Excluir o Proprietario ?</h3>
+
+<div>
+    <h4>Proprietario</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeProprietario)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NomeProprietario)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefone)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Telefone)
+        </dd>
+
+
+
+        <dt>
+
+
+
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" />
+        <a asp-action="Index">Back to list</a>
+    </form>
+
+
+
+</div>
+

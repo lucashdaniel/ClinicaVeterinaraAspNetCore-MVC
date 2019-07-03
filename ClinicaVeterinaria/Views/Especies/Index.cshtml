@@ -1,0 +1,61 @@
+﻿@model IEnumerable<ClinicaVeterinaria.Models.Especie>
+
+@{
+    ViewData["Title"] = "Especies";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-block">Adicionar Especie</a>
+</p>
+<form asp-controller="Especie" asp-action="Index" method="post">
+
+    <a asp-action="Create" class="btn btn-primary">Adicionar Especie</a>
+    <p>
+        <div class="row">
+           
+                
+
+        </div>
+        
+    </p>
+</form>
+
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr class="success">
+
+            <th>
+                @Html.DisplayNameFor(model => model.NomeEspecie)
+            </th>
+
+
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomeEspecie)
+                </td>
+
+                <td>
+
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+
+

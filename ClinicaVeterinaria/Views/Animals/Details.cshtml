@@ -1,0 +1,67 @@
+﻿@model ClinicaVeterinaria.Models.Animal
+
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div>
+    <h4>Animais</h4>
+    <hr/>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeAnimal)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NomeAnimal)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Sexo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Sexo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Idade)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Idade)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Especie)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Especie)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Proprietario)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Proprietario)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Peso)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Peso)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Altura)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Altura)
+        </dd>
+
+
+    </dl>
+</div>
+
+<div>
+    <a asp-action="Details" asp-route-id="@Model.Id" class="btn btn-default">Details</a>
+    <a asp-action="Index">Back to list</a>
+</div>
+

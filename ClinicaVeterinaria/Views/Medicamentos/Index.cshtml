@@ -1,0 +1,86 @@
+﻿@model IEnumerable<ClinicaVeterinaria.Models.Medicamento>
+
+
+
+@{
+    ViewData["Title"] = "Medicamentos";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-block">Cadastrar Medicamento</a>
+</p>
+<form asp-controller="Medicamento" asp-action="Index" method="post">
+
+    <a asp-action="Create" class="btn btn-primary">Cadastrar Medicamento</a>
+    <p>
+        <div class="row">
+            
+
+        </div>
+        
+
+    </p>
+</form>
+
+
+<table class="table text-center table-striped table-hover">
+    <thead>
+        <tr class="success">
+
+
+            <th>
+                @Html.DisplayNameFor(model => model.NomeMedicamento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DescricaoMedicamento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Valor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Animal.NomeAnimal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Proprietario.NomeProprietario)
+            </th>
+
+
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+
+
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeMedicamento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescricaoMedicamento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Valor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Animal.NomeAnimal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Proprietario.NomeProprietario)
+            </td>
+
+            <td>
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+
+        </tr>
+        }
+    </tbody>
+
+</table>
+

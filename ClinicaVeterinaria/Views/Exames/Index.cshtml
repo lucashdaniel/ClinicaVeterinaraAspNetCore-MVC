@@ -1,0 +1,91 @@
+﻿@model IEnumerable<ClinicaVeterinaria.Models.Exame>
+
+
+@{
+    ViewData["Title"] = "Exame";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+
+
+<p>
+    <a asp-action="Create" class="btn btn-block">Agendar Exame</a>
+</p>
+<form asp-controller="Exame" asp-action="Index" method="post">
+
+    <a asp-action="Create" class="btn btn-primary">Agendar Exame</a>
+    <p>
+        <div class="row">
+
+
+
+        </div>
+
+    </p>
+</form>
+
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr class="success">
+
+
+            <th>
+                @Html.DisplayNameFor(model => model.NomeDoExame)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValorExame)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Especie.NomeEspecie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Proprietario.NomeProprietario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Animal.NomeAnimal)
+            </th>
+
+
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+
+
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeDoExame)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorExame)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Especie.NomeEspecie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Proprietario.NomeProprietario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Proprietario.NomeProprietario)
+            </td>
+
+
+
+
+            <td>
+
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+
+        </tr>
+        }
+    </tbody>
+
+</table>
+

@@ -1,0 +1,81 @@
+﻿@model IEnumerable<ClinicaVeterinaria.Models.Caixa>
+
+
+
+@{
+    ViewData["Title"] = "Caixa";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Consultar Caixa</a>
+</p>
+<form asp-controller="Consulta" asp-action="Index" method="post">
+
+    <a asp-action="CreateSaida" class="btn btn-primary">Registrar saída do Caixa</a>
+    <p>
+        <div class="row">
+
+
+        </div>
+
+    </p>
+</form>
+
+
+<table class="table table-striped text-center table-hover">
+    <thead>
+        <tr class="success">
+
+
+            <th>
+                @Html.DisplayNameFor(model => model.Valor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descricao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tipo)
+            </th>
+            
+
+
+
+
+
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Valor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tipo)
+            </td>
+          
+            
+
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+
+        </tr>
+        }
+    </tbody>
+    
+
+</table>
+
+    <h1>  Valor em caixa:  R$@Model.Sum(obj => obj.Valor).ToString()</h1>
+

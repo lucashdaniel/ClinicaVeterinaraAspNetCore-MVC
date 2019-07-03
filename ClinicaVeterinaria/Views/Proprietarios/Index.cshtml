@@ -1,0 +1,76 @@
+﻿@model IEnumerable<ClinicaVeterinaria.Models.Proprietario>
+
+
+
+
+@{
+    ViewData["Title"] = "Proprietario";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-block">Adicionar Proprietario</a>
+</p>
+<form asp-controller="Proprietario" asp-action="Index" method="post">
+
+    <a asp-action="Create" class="btn btn-primary">Adicionar Proprietario</a>
+    <p>
+        <div class="row">
+            
+
+        </div>
+        
+    </p>
+</form>
+
+
+<table class="table text-center table-striped table-hover">
+    <thead>
+        <tr class="success">
+            <th>
+                @Html.DisplayNameFor(model => model.NomeProprietario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomeProprietario)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Telefone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+
+
+
+
+
+
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+
+</table>
+

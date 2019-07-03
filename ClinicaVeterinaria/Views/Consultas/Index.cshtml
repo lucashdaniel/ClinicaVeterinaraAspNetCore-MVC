@@ -1,0 +1,122 @@
+﻿@model IEnumerable<ClinicaVeterinaria.Models.Consulta>
+
+
+
+
+@{
+    ViewData["Title"] = "Consultas";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Agendar Uma Consulta</a>
+</p>
+<form asp-controller="Consultas" asp-action="Index" method="post">
+    <a asp-action="Create" class="btn btn-primary">Agendar uma Consulta</a>
+    <p>
+        <div class="row">
+            <div class="col-md-4">
+                <h5>Pesquisar Por Consulta </h5> <h3> <input type="text" name="buscaconsulta"></h3>
+                <button type="submit" class="btn btn-primary">PESQUISAR</button>
+            </div>
+        </div>        
+    </p>
+</form>
+
+
+<table class="table text-center table-striped table-hover">
+    <thead>
+        <tr class="success">
+
+            <th>
+                @Html.DisplayNameFor(model => model.Veterinario.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Especies.NomeEspecie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Animal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sintomas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Medicamento.NomeMedicamento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Medicamento.Valor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Medicamento.DescricaoMedicamento)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Proprietario.NomeProprietario)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.ValorConsulta)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.DataConsulta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pago)
+            </th>
+
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Veterinario.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Especies.NomeEspecie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Animal.NomeAnimal)
+            </td>
+            <th>
+                @Html.DisplayFor(modelItem => item.Sintomas)
+            </th>
+            <td>
+                @Html.DisplayFor(modelItem => item.Medicamento.NomeMedicamento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Medicamento.Valor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Medicamento.DescricaoMedicamento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Proprietario.NomeProprietario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorConsulta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataConsulta)
+            </td>
+
+
+
+
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+
+        </tr>
+        }
+    </tbody>
+
+</table>
+

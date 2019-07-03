@@ -1,0 +1,86 @@
+﻿@model ClinicaVeterinaria.Models.ViewModels.AnimalFormViewModel
+
+
+
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<h4>Animais</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <input type="hidden" asp-for="Animal.Id" />
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Animal.NomeAnimal" class="control-label"></label>
+                <input asp-for="Animal.NomeAnimal" class="form-control" />
+                <span asp-validation-for="Animal.NomeAnimal" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Animal.Sexo" class="control-label"></label>
+                <input asp-for="Animal.Sexo" class="form-control" />
+                <span asp-validation-for="Animal.Sexo" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Animal.Idade" class="control-label"></label>
+                <input asp-for="Animal.Idade" class="form-control" />
+                <span asp-validation-for="Animal.Idade" class="text-danger"></span>
+            </div>
+
+
+
+            <div class="form-group">
+                <label asp-for="Animal.Peso" class="control-label"></label>
+                <input asp-for="Animal.Peso" class="form-control" />
+                <span asp-validation-for="Animal.Peso" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Animal.Altura" class="control-label"></label>
+                <input asp-for="Animal.Altura" class="form-control" />
+                <span asp-validation-for="Animal.Altura" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Animal.DescricaoEspecie" class="control-label"></label>
+                <input asp-for="Animal.DescricaoEspecie" class="form-control" />
+                <span asp-validation-for="Animal.DescricaoEspecie" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group">
+                <label asp-for="Animal.EspecieId" class="control-label"></label>
+                <select asp-for="Animal.EspecieId" asp-items="@(new SelectList(Model.Especies,"Id","NomeEspecie"))"
+                        class="form-control"></select>
+            </div>
+
+
+            <div class="form-group">
+                <label asp-for="Animal.ProprietarioId" class="control-label"></label>
+                <select asp-for="Animal.ProprietarioId" asp-items="@(new SelectList(Model.Proprietarios, "Id", "NomeProprietario"))"
+                        class="form-control"></select>
+            </div>
+
+
+
+
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+
+
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

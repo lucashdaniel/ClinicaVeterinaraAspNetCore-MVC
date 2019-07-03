@@ -1,0 +1,53 @@
+﻿@model ClinicaVeterinaria.Models.Veterinario
+
+
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>@ViewData</h2>
+
+<div>
+    <h4>Veterinario</h4>
+    <hr/>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CPF)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CPF)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Celular)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Celular)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Registro)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Registro)
+        </dd>
+        
+     
+    </dl>
+</div>
+<div>
+    <a asp-action="Details" asp-route-id="@Model.Id" class="btn btn-default">Details</a>
+    <a asp-action="Index">Back to list</a>
+</div>
+

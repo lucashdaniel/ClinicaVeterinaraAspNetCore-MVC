@@ -1,0 +1,115 @@
+﻿@model IEnumerable<ClinicaVeterinaria.Models.Cliente>
+
+
+
+@{
+    ViewData["Title"] = "Clientes";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+
+
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Adicionar um Cliente</a>
+</p>
+<form asp-controller="Clientes" asp-action="Index" method="post">
+
+    <a asp-action="Create" class="btn btn-primary">Adicionar um Cliente</a>
+    <p>
+        <div class="row">
+            <div class="col-md-4">
+                <h5>Pesquisar Por </h5> <h3> <input type="text" name="busca"></h3>
+                <button type="submit" class="btn btn-primary">PESQUISAR</button>
+
+            </div>
+        </div>
+    </p>
+
+</form>
+
+
+<table class="table text-center table-striped table-hover">
+
+    <thead>
+        <tr class="success">
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataNascimento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Celular)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CPF)
+            </th>
+            <th>
+            
+                @Html.DisplayNameFor(model => model.Estado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cidade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bairro)
+            <th>
+                @Html.DisplayNameFor(model => model.Rua)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Numero)
+            </th>
+            <th></th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataNascimento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Celular)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CPF)
+                </td>
+
+                
+                <td>
+                    @Html.DisplayFor(modelItem => item.Estado)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Bairro)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Rua)
+                <td>
+                    @Html.DisplayFor(modelItem => item.Numero)
+                </td>
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
