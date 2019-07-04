@@ -8,3 +8,6 @@ Para a execução desse projeto é nescessária a instalação do Visual Studio,
 Também é nescessária a instalação do MySQL Workbench 8.0 CE.
 
 Para criação do Banco ultilizei Entity Framework que cria o banco de dados baseado em meus modelos criado no MVC.
+
+NOME: LUCAS HORN DANIEL   RA: 1650114
+EMAIL: lucasdaniel@alunos.utfpr.edu.br
